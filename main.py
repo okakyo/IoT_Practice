@@ -34,6 +34,8 @@ class Network:
 
 
  def motor(self,left,right):
+     motor_left=Pin(15,Pin.OUT)
+     motoe_right=Pin(10,Pin.OUT)
      motor_left.value(left)
      motor_right.value(right)
      time.sleep(1)
