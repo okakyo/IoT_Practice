@@ -11,10 +11,20 @@ def connected(name,pwd,timeout=10):
     else:
         net.active(True)
         net.connect(name,pwd)
-        while not net.isconnected() or timeout<0:
+        while not net.isconnected() or timeout>0:
             print('.')
+            utime.sleep()
             timeout-=1
-            return net
+    if net.isconnected():
+        print('Connected!')
+        return net
+    else:
+        print('Connection Failed!')
+        return null
 
+def slacker():
     pass
+
+if __name__=='__main__':
+    connected(SSID_ID,SSID_PWD):
 

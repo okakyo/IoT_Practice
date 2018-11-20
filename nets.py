@@ -1,7 +1,7 @@
 import socket,network,urequests
 
-SSID_ID=''
-SSID_PWD=''
+SSID_ID='denx'
+SSID_PWD='roBota5o'
 
 def connected(name,pwd,timeout=10):
     net=network.WLAN(network.STA_IF)
@@ -22,9 +22,8 @@ def connected(name,pwd,timeout=10):
         print('Connection Failed!')
         return null
 
-def slacker():
-    pass
+
 
 if __name__=='__main__':
     connected(SSID_ID,SSID_PWD):
-    slacker():
+
