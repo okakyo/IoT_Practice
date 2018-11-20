@@ -1,4 +1,4 @@
-import socket,network,urequests
+import socket,network,utime
 
 SSID_ID='denx'
 SSID_PWD='roBota5o'
@@ -13,7 +13,7 @@ def connected(name,pwd,timeout=10):
         net.connect(name,pwd)
         while not net.isconnected() or timeout>0:
             print('.')
-            utime.sleep()
+            utime.sleep(1)
             timeout-=1
     if net.isconnected():
         print('Connected!')
@@ -25,5 +25,5 @@ def connected(name,pwd,timeout=10):
 
 
 if __name__=='__main__':
-    connected(SSID_ID,SSID_PWD):
+    connected(SSID_ID,SSID_PWD)
 

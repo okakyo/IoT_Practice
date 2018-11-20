@@ -1,4 +1,4 @@
-from machine import Pin,pwd
+from machine import Pin
 import network,socket,time,urequests
 import utime
 
@@ -8,15 +8,16 @@ class Network:
         self.SSID_name=name
         self.SSID_pwd=pwd
 
-    def setup(name,pwd,timeout=10):
+    def setup(self,timeout=10):
 
-        net=network.WLAN(network.STA_IF)
+        wifi=network.WLAN(network.STA_IF)
+
         if wifi.isconnected():
             print('Already connected. connect skip')
             return net
         else:
             wifi.active(True)
-            wifi.connect(name,pwd)
+            wifi.connect(self.SSID_name,self.SSID_pwd)
             while not wifi.isconnected() or timeout>0:
                 print('.')
                 utime.sleep(1)
@@ -33,10 +34,12 @@ class Network:
         pass
 
 
- def motor(self,left,right):
-     motor_left.value(left)
-     motor_right.value(right)
-     time.sleep(1)
+def motor(left,right):
+    motor_left=Pin(15,Pin.OUT)
+    motor_right=Pin(10,Pin.OUT)
+    motor_left.value(left)
+    motor_right.value(right)
+    time.sleep(1)
 
 if __name__=='__main__':
     Net=Network()
