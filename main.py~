@@ -39,11 +39,10 @@ def motor(left,right):
     motor_right=Pin(10,Pin.OUT)
     motor_left.value(left)
     motor_right.value(right)
-    time.sleep(1)
 
 if __name__=='__main__':
     Net=Network()
     Net.setup()
-    for i in range(4):
+    while True:
         motor(1,0)
     
