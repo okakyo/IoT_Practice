@@ -30,8 +30,10 @@ class Network:
             print ('Connection Failed !')
             return null
 
-    def post_data(self,data,style=None):
-        pass
+    def post_data(self,data,style=None): 
+        html=''
+        if wifi.isconnected:
+            urequests.post(html,data=data)
 
 
 def motor(left,right):
