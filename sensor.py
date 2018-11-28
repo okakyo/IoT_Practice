@@ -1,5 +1,5 @@
 from machine import Pin
-import math
+import math,time
 
 #いかに赤外センサーを使えるようにするかについて記述する必要がある。
 # => クラスにした方が、それぞれのセンサーに対応できる。
@@ -7,7 +7,7 @@ import math
 class Base_Sensors:
     def __init__(self,pin,w_time=10):
         self.w_time=w_time
-        self.sensor=Pin(pin,Pin.INPUT)
+        self.sensor=Pin(pin,Pin.IN)
 
     def calculate(self):
         pass
@@ -20,26 +20,30 @@ class Sonic(Base_Sensors):
         super().__init__(pin)
     
     def calculate(self):
-        pass
+        
 
     def main(self):
         pass
 
 class Light(Base_Sensors):
-    pass
+    def __init__(self,pin):
+        super().__init__(pin)
 
 class Temperature(Base_Sensors):
-    pass
+    def __init__(self,pin):
+        super().__init__(pin)
 
 class Gyro(Base_Sensors):
-    pass
+    def __init__(self,pin):
+        super().__init__(pin)
 
 class Accel(Base_Sensors):
-    pass
+    def __init__(self,pin):
+        super().__init__(pin)
 
 
 def main():
-    send_pin=Pin(10,Pin.INPUT)
+    send_pin=Pin(10,Pin.IN)
     while True:
 
         print(send_pin)
