@@ -35,12 +35,18 @@ class Network:
         if wifi.isconnected:
             urequests.post(html,data=data)
 
+class DCmotor:
+    def __init__(self,left,right,time=10):
+        self.left=   Pin(left,Pin.OUT)
+        self.right = Pin(right ,Pin.OUT)
 
-def motor(left,right):
-    motor_left=Pin(15,Pin.OUT)
-    motor_right=Pin(10,Pin.OUT)
-    motor_left.value(left)
-    motor_right.value(right)
+    def move(left,right):
+        self.left.value(left)
+        self.right.value(right)
+        time.sleep(1)
+
+    def __del__(self):
+        pass    
 
 if __name__=='__main__':
     Net=Network()
