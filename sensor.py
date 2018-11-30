@@ -43,7 +43,8 @@ class Accel(Base_Sensors):
 
 
 def main():
-    send_pin=Pin(10,Pin.IN)
+    pin=10
+    sensor=Sonic(pin)
     while True:
 
         print(send_pin)

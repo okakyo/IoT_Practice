@@ -1,5 +1,5 @@
 from machine import Pin
-import math
+import math,time
 
 #いかに赤外センサーを使えるようにするかについて記述する必要がある。
 # => クラスにした方が、それぞれのセンサーに対応できる。
@@ -20,7 +20,7 @@ class Sonic(Base_Sensors):
         super().__init__(pin)
     
     def calculate(self):
-        pass
+        
 
     def main(self):
         pass

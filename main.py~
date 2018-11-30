@@ -40,13 +40,14 @@ class DCmotor:
         self.left=   Pin(left,Pin.OUT)
         self.right = Pin(right ,Pin.OUT)
 
-    def move(left,right):
+    def move(left,right,mtime=10):
         self.left.value(left)
         self.right.value(right)
-        time.sleep(1)
+        time.sleep(10)
 
     def __del__(self):
-        pass    
+        self.move(0,0)
+
 
 if __name__=='__main__':
     Net=Network()
