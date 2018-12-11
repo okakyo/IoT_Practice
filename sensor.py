@@ -4,52 +4,43 @@ import math,time
 #いかに赤外センサーを使えるようにするかについて記述する必要がある。
 # => クラスにした方が、それぞれのセンサーに対応できる。
 
-class Base_Sensors:
-    def __init__(self,pin,w_time=10):
-        self.w_time=w_time
-        self.sensor=Pin(pin,Pin.IN)
+def setup():
+    global trig,echo
+    trig=Pin(7,Pin.OUT)
+    echo=Pin(6,Pin.IN)
 
-    def calculate(self):
-        pass
+def read():
+    global trig,echo
+    t1=t2=None
+    tick=0.0001
+    trig.value(1)
+    time.sleep(0.00001)
+    trig.value(0)
+    for _ in range(10000):
+        if echo.value():
+            t1=time.ticks_us()
+            break
+        time.sleep(tick)
 
-    def main(self):
-        pass
+    if not  t1:
+        raise RuntimeError
 
-class Sonic(Base_Sensors):
-    def __init__(self,pin):
-        super().__init__(pin)
-    
-    def calculate(self):
+    for _ in range(10000):
+        if not echo.value():
+            t2=time.ticks_us()
+            break
+        time.sleep(tick)
+    if not t2:
+        raise RuntimeError
+
+    return float(0.017*(t2-t1))
         
-
-    def main(self):
-        pass
-
-class Light(Base_Sensors):
-    def __init__(self,pin):
-        super().__init__(pin)
-
-class Temperature(Base_Sensors):
-    def __init__(self,pin):
-        super().__init__(pin)
-
-class Gyro(Base_Sensors):
-    def __init__(self,pin):
-        super().__init__(pin)
-
-class Accel(Base_Sensors):
-    def __init__(self,pin):
-        super().__init__(pin)
-
-
 def main():
-    pin=10
-    sensor=Sonic(pin)
+    setup()
     while True:
-
-        print(send_pin)
-
-if __name__=='__main__':
-   main()
-
+        try:
+            print(read())
+        except RuntimeError:
+            pass
+        time.sleep(1)
 
