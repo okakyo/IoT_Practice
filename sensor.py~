@@ -44,5 +44,5 @@ class Wave:
             time.sleep(1)
 
 if __name__=='__main__':
-    wave=Wave()
+    wave=Wave(6,7)
     wave.main()
