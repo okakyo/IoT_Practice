@@ -24,9 +24,9 @@ class Base:
 
 
 class Observe:
-    def __init__(self,p1,p2):
-        pass
-    
+    def __init__(self,p1):
+
+
     def calculate(self):
         pass
 
@@ -40,6 +40,14 @@ class Redsensor:
         pass
     def main():
         pass
+class Pressure:
+    def __init__(self,p1,p2):
+        pass
+    def calclate(self):
+        pass
+    def main():
+        pass
+
 
 class Meteograph:
     def __init__(self):
@@ -70,10 +78,11 @@ class Sounds:
 class Wave:
     
     def __init__(self,p1,p2):
+        
         self.trig=Pin(p1,Pin.OUT)
         self.echo=Pin(p2,Pin.IN)
 
-    def __read(self):
+    def calculate(self):
         t1=t2=None
         tick=0.0001
         self.trig.value(1)
@@ -101,7 +110,7 @@ class Wave:
     def main(self):
         while True:
             try:
-                print(self.__read())
+                print(selfcalculate())
             except RuntimeError:
                 pass
             time.sleep(1)
