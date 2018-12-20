@@ -24,9 +24,9 @@ class Base:
 
 
 class Observe:
-    def __init__(self,p1,p2):
-        pass
-    
+    def __init__(self,p1):
+
+
     def calculate(self):
         pass
 
@@ -40,6 +40,14 @@ class Redsensor:
         pass
     def main():
         pass
+class Pressure:
+    def __init__(self,p1,p2):
+        pass
+    def calclate(self):
+        pass
+    def main():
+        pass
+
 
 class Meteograph:
     def __init__(self):
