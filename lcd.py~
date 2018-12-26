@@ -1,7 +1,7 @@
 from micropython import const
 from machine import Pin,I2C
 import time
-import ujson
+
 
 CLEAR_DISPLAY=const(0x01)
 CLEAR_DISPLAY=const(0x02)
