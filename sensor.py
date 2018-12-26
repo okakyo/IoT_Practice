@@ -1,6 +1,5 @@
 from machine import Pin
 import math,time
-
 """
 
  いかに赤外センサーを使えるようにするかについて記述する必要がある。
@@ -18,7 +17,10 @@ class Base:
         self.p2=Pin(p2,Pin.Out)
 
     def calculate(self):
-        pass
+        
+        return 
+
+
     def main(self):
         pass
 
