@@ -1,4 +1,6 @@
 import socket,network,utime
+import urequests,ujson
+
 
 SSID_ID='denx'
 SSID_PWD='roBota5o'

@@ -13,7 +13,7 @@ def connected(name,pwd,timeout=10):
         net.connect(name,pwd)
         while not net.isconnected() or timeout>0:
             print('.')
-            utime.sleep()
+            utime.sleep(1)
             timeout-=1
     if net.isconnected():
         print('Connected!')
