@@ -32,6 +32,10 @@ class Network:
 
     def post_data(self,data,style=None): 
         html=''
+        name=''
+        pwd=''
+        authory_token=''
+
         if wifi.isconnected:
             urequests.post(html,data=data)
 
@@ -46,7 +50,7 @@ class DCmotor:
         time.sleep(10)
 
     def __del__(self):
-        self.move(0,0)
+        self.move(0,0,mtime=2)
 
 
 if __name__=='__main__':
